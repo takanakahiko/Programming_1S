@@ -1,5 +1,3 @@
-import javax.print.DocFlavor.INPUT_STREAM;
-
 public class Main{
     //‘Q‰»®‚ğ—p‚¢‚Ä“ü—Í‚³‚ê‚½”‚Ì•½•ûª‚ğ‹‚ß‚é–â‘è
     public static void main(String args[]){
