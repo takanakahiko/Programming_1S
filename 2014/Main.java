@@ -10,7 +10,7 @@ public class Main{
 
         for(int i = 0; i < sub_n; i++){
             int top = 0;
-            int sum = 0;
+            double sum = 0;
             for(int j = 0; j < stu_n; j++){
                 String message = "Šw¶" + j +"‚Ì‹³‰È"+ i +"‚Ì‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢";
                 int score = Integer.parseInt(System.console().readLine(message));
