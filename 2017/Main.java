@@ -10,7 +10,7 @@ public class Main {
         System.out.println();
         System.out.println("配列の要素数：" + m.length);
 
-		System.out.println("----------------------------------------------");
+        System.out.println("----------------------------------------------");
 
         //問2：配列mの要素の算術平均を求めよ
         int sum = 0;
@@ -19,7 +19,7 @@ public class Main {
         }
         System.out.println("配列の算術平均は" + ((double)sum / m.length) + "です");
 
-		System.out.println("----------------------------------------------");
+        System.out.println("----------------------------------------------");
 
         //問3：配列mの要素について、偶数は加算、奇数は減算として和を求め表示せよ
         sum = 0;
@@ -32,7 +32,7 @@ public class Main {
         }
         System.out.println(sum);
 
-		System.out.println("----------------------------------------------");
+        System.out.println("----------------------------------------------");
 
         /*問4：配列mの要素のうち、数値zの個数を求め表示せよ
         　   　ただし、zは0から9任意の値であり、キーボードから入力するものとする
