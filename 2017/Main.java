@@ -1,78 +1,67 @@
-import java.io.Console;
+public class Main {
+    public static void main(String[] args) {
 
-public class Main{
-  public static void main(String args[]){
-    int[] m = {3,1,4,1,5,9,2,6,5,3,5,8,9,7,9,3,2,3,8,4,6,2,6,4,3,3,8,3,2,7,9,5};
+        int m[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9, 5};
 
-    //(1) ”z—ñm‚Ì—v‘f‚Æ—v‘f”‚ğ•\¦‚¹‚æ
-    System.out.println("(1)Œ³‚Ì”z—ñ:");
-    for(int i=0;i<m.length;i++){
-      System.out.print(" "+m[i]);
-    }
-    System.out.println();
-    System.out.println("”z—ñ‚Ì—v‘f”:"+m.length);
+        //å•1ï¼šé…åˆ—mã®è¦ç´ ã¨è¦ç´ æ•°ã‚’è¡¨ç¤ºã›ã‚ˆ
+        for(int i = 0; i < m.length; i++) {
+            System.out.print(m[i] + " ");
+        }
+        System.out.println();
+        System.out.println("é…åˆ—ã®è¦ç´ æ•°ï¼š" + m.length);
 
-    //(2) ”z—ñm‚ÌZp•½‹Ï‚ğ‹‚ß‚æ
-    double arithmeric_mean = 0;
-    for(int i=0;i<m.length;i++){
-      arithmeric_mean += m[i];
-    }
-    arithmeric_mean /= m.length;
-    System.out.println("(2)Zp•½‹Ï:"+arithmeric_mean);
+        System.out.println("----------------------------------------------");
 
-    //(3) ”z—ñm‚Ì—v‘f‚É‚Â‚¢‚ÄA‹ô”‚Í‰ÁZAŠï”‚ÍŒ¸Z‚Æ‚µ‚ÄA˜a‚ğ‹‚ß•\¦‚¹‚æ
-    int calculated = 0;
-    for(int i=0;i<m.length;i++){
-      if(m[i] % 2 == 0){
-        calculated += m[i];
-      }else{
-        calculated -= m[i];
-      }
-    }
-    System.out.println("(3)ŒvZŒ‹‰Ê:"+calculated);
+        //å•2ï¼šé…åˆ—mã®è¦ç´ ã®ç®—è¡“å¹³å‡ã‚’æ±‚ã‚ã‚ˆ
+        int sum = 0;
+        for(int i = 0; i < m.length; i++) {
+            sum = sum + m[i];
+        }
+        System.out.println("é…åˆ—ã®ç®—è¡“å¹³å‡ã¯" + ((double)sum / m.length) + "ã§ã™");
 
-    //(4) ”z—ñm‚Ì—v‘f‚ğ‹t‡‚É‚µ‚½”z—ñr‚ğ‹‚ß‚æ
-    int[] r = new int[m.length];
-    for(int i = 0;i<m.length;i++){
-      r[i] = m[m.length - i - 1];
-    }
-    System.out.println("(4)”z—ñr:");
-    for(int i=0;i<r.length;i++){
-      System.out.print(" "+r[i]);
-    }
-    System.out.println();
+        System.out.println("----------------------------------------------");
 
-    //(5) ”z—ñm‚Ì—v‘f‚Ì‚¤‚¿A”’lz‚ÌŒÂ”‚ğ‹‚ß•\¦‚¹‚æB‚½‚¾‚µAz‚Í0‚©‚ç9‚Ì”CˆÓ‚Ì
-    //’l‚Å‚ ‚èAƒL[ƒ{[ƒh‚©‚ç“ü—Í‚·‚é‚à‚Ì‚Æ‚·‚éB‚³‚ç‚Éz‚ğíœ‚µ‚½”z—ñs‚ğ‹‚ß‚æB
-    //‚Ü‚½íœ‚µ‚½—v‘fˆÊ’u‚Í‡ŸŒã‚ë‚Ì—v‘f‚ğ‹l‚ß‚é‚±‚ÆB‚³‚ç‚ÉAíœ‚µ‚½—v‘f‚ÌŒÂ”•ª
-    //‚Ì-1‚ğ”z—ñ‚ÌŒã‚ë‚©‚ç–„‚ß‚æB”z—ñs‚Ì—v‘f‚ğ•\¦‚¹‚æB
-    Console console = System.console();
-    String line = console.readLine();
-    int z = Integer.parseInt(line);
-    int z_count = 0;
-    for(int i=0;i<m.length;i++){
-      if(m[i] == z){
-        z_count++;
-      }
-    }
-    System.out.println("(5.1)”’lz‚ÌŒÂ”:"+z_count);
-    int[] s = new int[m.length];
-    int tmp = 0;
-    for(int i=0;i<s.length;i++){
-      if(m[i] != z){
-        s[i-tmp] = m[i];
-      }else{
-        tmp++;
-      }
-    }
-    for(int i=0;i<z_count;i++){
-      s[s.length-i-1] = -1;
-    }
-    System.out.println("(5.2)”z—ñs:");
-    for(int i=0;i<s.length;i++){
-      System.out.print(" "+s[i]);
-    }
-    System.out.println();
+        //å•3ï¼šé…åˆ—mã®è¦ç´ ã«ã¤ã„ã¦ã€å¶æ•°ã¯åŠ ç®—ã€å¥‡æ•°ã¯æ¸›ç®—ã¨ã—ã¦å’Œã‚’æ±‚ã‚è¡¨ç¤ºã›ã‚ˆ
+        sum = 0;
+        for(int i = 0; i < m.length; i++) {
+            if(m[i] % 2 == 0) {
+                sum = sum + m[i];
+            } else {
+                sum = sum - m[i];
+            }
+        }
+        System.out.println(sum);
 
-  }
+        System.out.println("----------------------------------------------");
+
+        /*å•4ï¼šé…åˆ—mã®è¦ç´ ã®ã†ã¡ã€æ•°å€¤zã®å€‹æ•°ã‚’æ±‚ã‚è¡¨ç¤ºã›ã‚ˆ
+        ã€€   ã€€ãŸã ã—ã€zã¯0ã‹ã‚‰9ä»»æ„ã®å€¤ã§ã‚ã‚Šã€ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰å…¥åŠ›ã™ã‚‹ã‚‚ã®ã¨ã™ã‚‹
+               ã•ã‚‰ã«ã€zã‚’å‰Šé™¤ã—ãŸé…åˆ—sã‚’æ±‚ã‚ã‚ˆ
+               ã¾ãŸå‰Šé™¤ã—ãŸè¦ç´ ä½ç½®ã¯é †æ¬¡å¾Œã‚ã®è¦ç´ ã‚’è©°ã‚ã‚‹ã“ã¨
+               ã•ã‚‰ã«ã€å‰Šé™¤ã—ãŸè¦ç´ ã®å€‹æ•°åˆ†ã®-1ã‚’é…åˆ—ã®é…åˆ—ã®å¾Œã‚ã‹ã‚‰åŸ‹ã‚ã‚ˆ
+               é…åˆ—sã®è¦ç´ ã‚’è¡¨ç¤ºã›ã‚ˆ
+        */
+        int z = Integer.parseInt(System.console().readLine());
+        sum = 0;
+        for(int i = 0; i < m.length; i++) {
+            if(m[i] == z) sum++;
+        }
+        System.out.println("é…åˆ—mã«å«ã¾ã‚Œã‚‹" + z + "ã®å€‹æ•°ã¯" + sum + "ã§ã™");
+        int s[] = new int[m.length];
+        int j = 0;
+        for(int i = 0; i < m.length; i++) {
+            if(m[i] != z) {
+                s[j] = m[i];
+                j++;
+            }
+        }
+        for(int i = s.length - sum; i < s.length; i++) {
+            s[i] = -1;
+        }
+        for(int i = 0; i < s.length; i++) {
+            System.out.print(s[i] + " ");
+        }
+        System.out.println();
+
+    }
 }
